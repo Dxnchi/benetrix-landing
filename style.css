@@ -1,3 +1,28 @@
+html {
+    scroll-behavior: smooth; /* This creates the gliding effect */
+}
+
+/* Nav Links Styling */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #f8fafc;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Hide links on small screens to keep it clean */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+}
 /* Base Styles */
 * {
     margin: 0;
@@ -446,4 +471,29 @@ footer {
 .client-info span {
     color: #64748b;
     font-size: 0.85rem;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.6);
 }

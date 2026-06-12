@@ -76,12 +76,14 @@ a {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
     height: 80vh;
     display: flex;
     align-items: center;
     padding: 0 5%;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    /* This pulls a high-quality logistics image from Unsplash automatically */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
 }
 
 .hero-content {
@@ -273,4 +275,175 @@ footer {
 @media (max-width: 768px) {
     .about-section { padding: 60px 5%; }
     .about-text h2 { font-size: 2rem; }
+}
+
+/* Navbar Logo Upgrades */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-logo {
+    max-height: 40px;
+    margin-right: 12px;
+    border-radius: 4px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.logo-text span { color: #38bdf8; }
+
+/* Contact Grid & Clickable Links */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+    align-items: stretch;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+    transform: translateX(10px);
+}
+
+.icon-box {
+    background-color: #0f172a;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    color: #38bdf8;
+}
+
+.link-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+/* Responsive Google Map */
+.map-container {
+    width: 100%;
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .map-container { height: 300px; }
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 5%;
+    background-color: #020617;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #0f172a;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+/* Big faint quote mark in the background */
+.testimonial-card::before {
+    content: '\201C';
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: rgba(56, 189, 248, 0.05);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.stars i {
+    color: #fbbf24; /* Gold stars */
+    margin-right: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-style: italic;
+    color: #e2e8f0;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+.client-info strong {
+    display: block;
+    color: #38bdf8;
+    font-size: 1.1rem;
+}
+
+.client-info span {
+    color: #64748b;
+    font-size: 0.85rem;
 }

@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+  <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">BENETRIX<span> INT.</span></div>
+        <a href="#" class="logo-container">
+            <!-- Drop your logo file in your GitHub repo and name it logo.png -->
+            <img src="logo.jpg" alt="Benetrix Logo" class="brand-logo" onerror="this.style.display='none'"> 
+            <div class="logo-text">BENETRIX<span> INT.</span></div>
+        </a>
         <a href="#contact" class="btn-primary">Get in Touch</a>
     </nav>
 
@@ -70,13 +74,81 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>Client Success Stories</h2>
+        <p class="section-subtitle">Trusted by local businesses and enterprise partners.</p>
+        <div class="testimonial-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="quote">"Benetrix completely transformed our retail operations. The custom commercial website and secure invoicing backend they deployed for us is flawless and incredibly fast."</p>
+                <div class="client-info">
+                    <strong>IFENRI Market</strong>
+                    <span>Retail & Grocery, Buccleuch</span>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="quote">"Exceptional logistics management. Their mobile-optimized tracking system gives us complete visibility over our assets. Vision-driven and execution-focused, exactly as promised."</p>
+                <div class="client-info">
+                    <strong>Commercial Fleet Partner</strong>
+                    <span>Johannesburg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Ready to Scale Your Operations?</h2>
         <p>Let's build the infrastructure your business needs.</p>
-        <div class="contact-info">
-            <p><i class="fa-solid fa-phone"></i> +27 74 499 3979</p>
-            <p><i class="fa-solid fa-location-dot"></i> Buccleuch, Sandton, Johannesburg</p>
+        
+        <!-- Clickable Info -->
+            <div class="contact-info">
+                <a href="tel:+27744993979" class="contact-link">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <span class="link-label">Call Us Directly</span>
+                        <strong>+27 74 499 3979</strong>
+                    </div>
+                </a>
+                
+                <a href="mailto:destife10@gmail.com" class="contact-link">
+                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <span class="link-label">Email Us</span>
+                        <strong>destife10@gmail.com</strong>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/destiny-okeke123/" target="_blank" class="contact-link">
+                    <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div>
+                        <span class="link-label">Connect with the Founder</span>
+                        <strong>Destiny Okeke on LinkedIn</strong>
+                    </div>
+                </a>
+                
+                <a href="https://maps.google.com/?q=Buccleuch,+Sandton,+Johannesburg" target="_blank" class="contact-link">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <span class="link-label">Headquarters</span>
+                        <strong>Buccleuch, Sandton, JHB</strong>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Responsive Google Map -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28669.57140801869!2d28.08272995!3d-26.0713783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9572b83eb05bd5%3A0xc3c9a622a6111f12!2sBuccleuch%2C%20Sandton!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 

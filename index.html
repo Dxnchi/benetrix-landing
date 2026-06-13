@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="logo-container">
             <img src="logo.jpg" alt="Benetrix Logo" class="brand-logo" onerror="this.style.display='none'"> 
@@ -30,7 +29,6 @@
         <a href="#contact" class="btn-primary">Get in Touch</a>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
             <h1>Vision Driven. <br><span class="highlight">Execution Focused.</span></h1>
@@ -39,24 +37,35 @@
         </div>
     </header>
 
-    <!-- Services Section (Added 'fade-in' class here) -->
+    <section class="stats-section fade-in">
+        <div class="stat-box">
+            <h2 class="counter" data-target="99">0</h2><span>%</span>
+            <p>Uptime & Reliability</p>
+        </div>
+        <div class="stat-box">
+            <h2 class="counter" data-target="24">0</h2><span>/7</span>
+            <p>Fleet Tracking Visibility</p>
+        </div>
+        <div class="stat-box">
+            <h2 class="counter" data-target="100">0</h2><span>+</span>
+            <p>Custom Deployments</p>
+        </div>
+    </section>
+
     <section id="services" class="services fade-in">
         <h2>What We Do</h2>
         <div class="services-grid">
-            <!-- Service 1 -->
             <div class="service-card">
                 <i class="fa-solid fa-truck-fast"></i>
                 <h3>Fleet & Logistics</h3>
                 <p>Professional logistics branding and management. We cater to any size fleet requirements, ensuring your operations move seamlessly.</p>
             </div>
-            <!-- Service 2 -->
             <div class="service-card">
                 <i class="fa-solid fa-car"></i>
                 <h3>Vehicle Rentals</h3>
                 <p>Reliable and cost-effective vehicle rental solutions tailored for personal mobility and commercial ride-hailing deployment.</p>
             </div>
             
-            <!-- Service 3 -->
             <div class="service-card">
                 <i class="fa-solid fa-laptop-code"></i>
                 <h3>Tech Reselling & Dev</h3>
@@ -65,7 +74,6 @@
         </div>
     </section>
 
-    <!-- About / Experience Section (Added 'fade-in' class here) -->
     <section id="about" class="about-section fade-in">
         <div class="about-container">
             <div class="about-text">
@@ -77,21 +85,44 @@
                 <div class="contributions-box">
                     <h4>Key Engineering & Operational Milestones:</h4>
                     <ul>
-                        <li><i class="fa-solid fa-square-check"></i> <strong>Enterprise Integration:</strong> Executing a 12-month intensive Systems Integration role at JumpCo, deploying enterprise API pipelines and corporate-grade workflows.</li>
-                        <li><i class="fa-solid fa-square-check"></i> <strong>Proprietary Logistics Systems:</strong> Architected and deployed a mobile-optimized tracking and fleet operational management app to handle internal assets.</li>
-                        <li><i class="fa-solid fa-square-check"></i> <strong>Commercial Web Infrastructure:</strong> Shipped live full-stack production systems, custom database-driven invoicing frameworks, and secure authentication platforms (including corporate portals and retail solutions).</li>
+                        <li>
+                            <div>
+                                <i class="fa-solid fa-square-check"></i> <strong>Enterprise Integration:</strong> Executing a 12-month intensive Systems Integration role at JumpCo, deploying enterprise API pipelines and corporate-grade workflows.
+                                <div style="margin-top: 5px; margin-left: 28px;">
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">REST APIs</span>
+                                    <span class="tech-badge">Enterprise Cloud</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <i class="fa-solid fa-square-check"></i> <strong>Proprietary Logistics Systems:</strong> Architected and deployed a mobile-optimized tracking and fleet operational management app to handle internal assets.
+                                <div style="margin-top: 5px; margin-left: 28px;">
+                                    <span class="tech-badge">Mobile Fleet UI</span>
+                                    <span class="tech-badge">Asset Routing</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <i class="fa-solid fa-square-check"></i> <strong>Commercial Web Infrastructure:</strong> Shipped live full-stack production systems, custom database-driven invoicing frameworks, and secure authentication platforms (including corporate portals and retail solutions).
+                                <div style="margin-top: 5px; margin-left: 28px;">
+                                    <span class="tech-badge">Secure Databases</span>
+                                    <span class="tech-badge">Automated Invoicing</span>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section (Added 'fade-in' class here) -->
     <section id="testimonials" class="testimonials fade-in">
         <h2>Client Success Stories</h2>
         <p class="section-subtitle">Trusted by local businesses and enterprise partners.</p>
         <div class="testimonial-grid">
-            <!-- Testimonial 1 -->
             <div class="testimonial-card">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -102,7 +133,6 @@
                     <span>Retail & Grocery, Buccleuch</span>
                 </div>
             </div>
-            <!-- Testimonial 2 -->
             <div class="testimonial-card">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -116,13 +146,11 @@
         </div>
     </section>
 
-    <!-- Contact Section (Added 'fade-in' class here) -->
     <section id="contact" class="contact fade-in">
         <h2>Ready to Scale Your Operations?</h2>
         <p>Let's build the infrastructure your business needs.</p>
         
         <div class="contact-grid">
-            <!-- Clickable Info -->
             <div class="contact-info">
                 <a href="tel:+27744993979" class="contact-link">
                     <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
@@ -157,7 +185,6 @@
                 </a>
             </div>
 
-            <!-- Responsive Google Map -->
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28669.57140801869!2d28.08272995!3d-26.0713783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9572b83eb05bd5%3A0xc3c9a622a6111f12!2sBuccleuch%2C%20Sandton!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -165,7 +192,6 @@
         </div>
     </section>
 
-    <!-- Corporate Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
@@ -173,15 +199,13 @@
                 <p>Bridging technology and logistics.</p>
             </div>
             <div class="footer-legal">
-                <!-- Replace the X's with your actual CIPC Reg Number -->
                 <p><strong>Benetrix International (Pty) Ltd</strong></p>
                 <p>Company Reg: 2025/966705/07</p>
-                <!-- If you have an affidavit, B-BBEE level is great for SA contracts -->
                 <p>B-BBEE Level 1 Contributor</p> 
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Benetrix International. All rights reserved.</p>
+            <p>© 2026 Benetrix International. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -189,38 +213,22 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/27744993979?text=Hi%20Destiny,%20I'd%20like%20to%20know%20more%20about%20Benetrix%20logistics%20and%20tech%20services." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- NEW: Scroll Animation JavaScript Trigger -->
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-    </script>
-    <!-- Interactive Chatbot Widget -->
     <div class="chat-widget" id="chatWidget">
-        <!-- Chat Toggle Button -->
         <button class="chat-toggle" onclick="toggleChat()">
             <i class="fa-solid fa-comments"></i>
         </button>
 
-        <!-- Chat Window Box -->
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
                 <div class="chat-header-info">
                     <div class="online-indicator"></div>
                     <strong>Benetrix Assistant</strong>
                 </div>
-                <button class="chat-close" onclick="toggleChat()">&times;</button>
+                <button class="chat-close" onclick="toggleChat()">×</button>
             </div>
             
             <div class="chat-body" id="chatBody">
@@ -239,8 +247,8 @@
         </div>
     </div>
 
-    <!-- Chatbot Logic Script -->
     <script>
+        // Chatbot Logic
         function toggleChat() {
             const chatWindow = document.getElementById('chatWindow');
             chatWindow.classList.toggle('active');
@@ -266,13 +274,9 @@
                 actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I%20want%20to%20discuss%20a%20custom%20software%20project.";
             }
 
-            // Append User Message
             chatBody.innerHTML += `<div class="chat-msg user">${userText}</div>`;
-            
-            // Scroll down
             chatBody.scrollTop = chatBody.scrollHeight;
 
-            // Trigger Bot Response with slight human-like delay
             setTimeout(() => {
                 chatBody.innerHTML += `
                     <div class="chat-msg bot">
@@ -283,6 +287,45 @@
                 chatBody.scrollTop = chatBody.scrollHeight;
             }, 600);
         }
+
+        // Fade-In Scroll Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Dynamic Number Counter Observer
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const startCounting = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(() => startCounting(counter), 15);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounting(entry.target.querySelector('.counter'));
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-box').forEach(box => statObserver.observe(box));
     </script>
 </body>
 </html>

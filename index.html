@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="og:title" content="Benetrix International | Logistics & Tech Solutions">
+    <meta property="og:description" content="Bridging the gap between cutting-edge technology, AI camera operations, and modern logistics.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://dxnchi.github.io/benetrix-landing/">
+    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benetrix International | Logistics & Tech Solutions</title>
@@ -9,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="logo-container">
             <img src="logo.jpg" alt="Benetrix Logo" class="brand-logo" onerror="this.style.display='none'"> 
@@ -34,8 +39,8 @@
         </div>
     </header>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Services Section (Added 'fade-in' class here) -->
+    <section id="services" class="services fade-in">
         <h2>What We Do</h2>
         <div class="services-grid">
             <!-- Service 1 -->
@@ -60,8 +65,8 @@
         </div>
     </section>
 
-    <!-- About / Experience Section -->
-    <section id="about" class="about-section">
+    <!-- About / Experience Section (Added 'fade-in' class here) -->
+    <section id="about" class="about-section fade-in">
         <div class="about-container">
             <div class="about-text">
                 <h2>Our Story & Leadership</h2>
@@ -81,8 +86,8 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <!-- Testimonials Section (Added 'fade-in' class here) -->
+    <section id="testimonials" class="testimonials fade-in">
         <h2>Client Success Stories</h2>
         <p class="section-subtitle">Trusted by local businesses and enterprise partners.</p>
         <div class="testimonial-grid">
@@ -111,12 +116,13 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contact Section (Added 'fade-in' class here) -->
+    <section id="contact" class="contact fade-in">
         <h2>Ready to Scale Your Operations?</h2>
         <p>Let's build the infrastructure your business needs.</p>
         
-        <!-- Clickable Info -->
+        <div class="contact-grid">
+            <!-- Clickable Info -->
             <div class="contact-info">
                 <a href="tel:+27744993979" class="contact-link">
                     <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
@@ -163,9 +169,101 @@
     <footer>
         <p>&copy; 2026 Benetrix International. All rights reserved.</p>
     </footer>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/27744993979?text=Hi%20Destiny,%20I'd%20like%20to%20know%20more%20about%20Benetrix%20logistics%20and%20tech%20services." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- NEW: Scroll Animation JavaScript Trigger -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    </script>
+    <!-- Interactive Chatbot Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Chat Toggle Button -->
+        <button class="chat-toggle" onclick="toggleChat()">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+
+        <!-- Chat Window Box -->
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="online-indicator"></div>
+                    <strong>Benetrix Assistant</strong>
+                </div>
+                <button class="chat-close" onclick="toggleChat()">&times;</button>
+            </div>
+            
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg bot">
+                    Hi! Welcome to Benetrix International. How can we optimize your operations today?
+                </div>
+            </div>
+
+            <div class="chat-footer">
+                <div class="chat-options">
+                    <button onclick="handleChatOption('logistics')">Logistics & Fleet</button>
+                    <button onclick="handleChatOption('rentals')">Vehicle Rentals</button>
+                    <button onclick="handleChatOption('tech')">Tech Solutions</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Logic Script -->
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('active');
+        }
+
+        function handleChatOption(option) {
+            const chatBody = document.getElementById('chatBody');
+            let userText = "";
+            let botText = "";
+            let actionLink = "";
+
+            if (option === 'logistics') {
+                userText = "I'm interested in Fleet & Logistics solutions.";
+                botText = "Excellent. We design custom automated tracking systems and lean fleet coordination models. Let's finalize your spec on WhatsApp right now:";
+                actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I'm%20inquiring%20about%20your%20logistics%20and%20fleet%20services.";
+            } else if (option === 'rentals') {
+                userText = "I want to inquire about Vehicle Rentals.";
+                botText = "Perfect. We offer highly cost-effective options for personal mobility and ride-hailing deployments. Tap below to chat with our fleet manager:";
+                actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I'd%20like%20to%20know%20more%20about%20your%20vehicle%20rental%20options.";
+            } else if (option === 'tech') {
+                userText = "I need Tech Reselling or Custom Software Dev.";
+                botText = "Brilliant choice. From database infrastructures to custom invoicing architectures, we build scalable systems. Connect with our engineering core:";
+                actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I%20want%20to%20discuss%20a%20custom%20software%20project.";
+            }
+
+            // Append User Message
+            chatBody.innerHTML += `<div class="chat-msg user">${userText}</div>`;
+            
+            // Scroll down
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // Trigger Bot Response with slight human-like delay
+            setTimeout(() => {
+                chatBody.innerHTML += `
+                    <div class="chat-msg bot">
+                        ${botText}
+                        <a href="${actionLink}" target="_blank" class="chat-action-btn"><i class="fa-brands fa-whatsapp"></i> Launch Live Secure Chat</a>
+                    </div>
+                `;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 600);
+        }
+    </script>
 </body>
 </html>

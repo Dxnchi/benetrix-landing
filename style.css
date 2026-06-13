@@ -1,5 +1,5 @@
 html {
-    scroll-behavior: smooth; /* This creates the gliding effect */
+    scroll-behavior: smooth; 
 }
 
 /* Base Styles */
@@ -11,21 +11,21 @@ html {
 }
 
 body {
-    background-color: #0f172a; /* Deep tech blue/black */
+    background-color: #0f172a; 
     color: #f8fafc;
     line-height: 1.6;
 }
 
 /* Typography & Colors */
 .highlight {
-    color: #38bdf8; /* Tech Blue */
+    color: #38bdf8; 
 }
 
 a {
     text-decoration: none;
 }
 
-/* NEW: Premium Frosted Glass Navbar */
+/* Premium Frosted Glass Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -76,6 +76,19 @@ a {
 
 .nav-links a:hover {
     color: #38bdf8;
+}
+
+/* Utilities for Desktop/Mobile toggling */
+.menu-toggle {
+    display: none;
+    color: #f8fafc;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.desktop-only {
+    display: inline-block;
 }
 
 /* Buttons */
@@ -134,7 +147,7 @@ a {
     margin-bottom: 30px;
 }
 
-/* NEW: Stats Banner */
+/* Stats Banner */
 .stats-section {
     display: flex;
     justify-content: space-around;
@@ -292,7 +305,7 @@ a {
     flex-shrink: 0;
 }
 
-/* NEW: Portfolio Tech Badges */
+/* Portfolio Tech Badges */
 .tech-badge {
     display: inline-block;
     background-color: rgba(56, 189, 248, 0.15);
@@ -723,7 +736,7 @@ footer {
     color: #0f172a;
 }
 
-/* --- ELITE MOBILE OPTIMIZATIONS --- */
+/* --- THE SINGLE ELITE MOBILE OPTIMIZATION BLOCK --- */
 @media (max-width: 768px) {
     /* Typography scale downs */
     .hero h1 { font-size: 2.5rem; }
@@ -744,12 +757,17 @@ footer {
     .footer-links { margin-top: 10px; }
     .footer-links a { margin: 0 10px; }
 
-    /* The App-Like Mobile Menu */
+    /* The App-Like Mobile Menu Controls */
     .menu-toggle {
-        display: block; /* Show hamburger */
+        display: block;
+    }
+    .desktop-only {
+        display: none;
     }
     
+    /* Make the dropdown work! */
     .nav-links {
+        display: flex; /* THIS fixes the Safari bug */
         position: absolute;
         top: 100%;
         left: 0;
@@ -761,7 +779,6 @@ footer {
         align-items: center;
         padding: 0;
         gap: 0;
-        /* The slide-down animation trick */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
@@ -769,7 +786,7 @@ footer {
     }
 
     .nav-links.active {
-        max-height: 250px; /* Opens the menu */
+        max-height: 250px; 
         padding: 20px 0;
         border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
@@ -783,24 +800,8 @@ footer {
 
     /* Mobile Chatbot Fixes */
     .chat-window {
-        width: calc(100vw - 40px); /* Expands to fit phone perfectly */
-        right: -10px; /* Aligns correctly with the button */
+        width: calc(100vw - 40px);
+        right: -10px; 
         bottom: 85px;
-    }
-}
-
-/* Mobile Menu Icon */
-.menu-toggle {
-    display: none;
-    color: #f8fafc;
-    font-size: 1.8rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-/* Hide the 'Get in Touch' button on mobile to save space */
-@media (max-width: 768px) {
-    .desktop-only {
-        display: none;
     }
 }

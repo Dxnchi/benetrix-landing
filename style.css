@@ -723,24 +723,84 @@ footer {
     color: #0f172a;
 }
 
-/* Mobile Adjustments */
+/* --- ELITE MOBILE OPTIMIZATIONS --- */
 @media (max-width: 768px) {
+    /* Typography scale downs */
     .hero h1 { font-size: 2.5rem; }
-    .navbar { padding: 15px 5%; }
-    .nav-links { display: none; }
-    .about-section { padding: 60px 5%; }
     .about-text h2 { font-size: 2rem; }
+    
+    /* Layout adjustments */
+    .navbar { padding: 15px 5%; }
+    .about-section { padding: 60px 5%; }
     .contact-grid { grid-template-columns: 1fr; }
     .map-container { height: 300px; }
+    
+    /* Center the footer */
     .footer-content, .footer-bottom {
         flex-direction: column;
         text-align: center;
         align-items: center;
     }
-    .footer-links {
-        margin-top: 10px;
+    .footer-links { margin-top: 10px; }
+    .footer-links a { margin: 0 10px; }
+
+    /* The App-Like Mobile Menu */
+    .menu-toggle {
+        display: block; /* Show hamburger */
     }
-    .footer-links a {
-        margin: 0 10px;
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 0;
+        /* The slide-down animation trick */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        border-bottom: 1px solid rgba(56, 189, 248, 0);
+    }
+
+    .nav-links.active {
+        max-height: 250px; /* Opens the menu */
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Mobile Chatbot Fixes */
+    .chat-window {
+        width: calc(100vw - 40px); /* Expands to fit phone perfectly */
+        right: -10px; /* Aligns correctly with the button */
+        bottom: 85px;
+    }
+}
+
+/* Mobile Menu Icon */
+.menu-toggle {
+    display: none;
+    color: #f8fafc;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Hide the 'Get in Touch' button on mobile to save space */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
     }
 }

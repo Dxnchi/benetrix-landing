@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navbar (Now with Glassmorphism & Mobile Menu) -->
     <nav class="navbar">
         <a href="#" class="logo-container">
-            <img src="logo.jpg" alt="Benetrix Logo" class="brand-logo" onerror="this.style.display='none'"> 
+            <img src="logo.png" alt="Benetrix Logo" class="brand-logo" onerror="this.style.display='none'"> 
             <div class="logo-text">BENETRIX<span> INT.</span></div>
         </a>
         
@@ -26,7 +27,12 @@
             <a href="#testimonials">Clients</a>
         </div>
 
-        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <!-- NEW: Hamburger Icon for Mobile -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <a href="#contact" class="btn-primary desktop-only">Get in Touch</a>
     </nav>
 
     <header class="hero">
@@ -247,8 +253,9 @@
         </div>
     </div>
 
+   <!-- Scripts: Chatbot, Fade-In, Number Counter, and Mobile Menu -->
     <script>
-        // Chatbot Logic
+        // --- 1. Chatbot Logic ---
         function toggleChat() {
             const chatWindow = document.getElementById('chatWindow');
             chatWindow.classList.toggle('active');
@@ -288,7 +295,7 @@
             }, 600);
         }
 
-        // Fade-In Scroll Observer
+        // --- 2. Fade-In Scroll Observer ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -299,7 +306,7 @@
 
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
-        // Dynamic Number Counter Observer
+        // --- 3. Dynamic Number Counter Observer ---
         const counters = document.querySelectorAll('.counter');
         const speed = 200;
 
@@ -326,6 +333,37 @@
         }, { threshold: 0.5 });
 
         document.querySelectorAll('.stat-box').forEach(box => statObserver.observe(box));
+
+        // --- 4. Mobile Hamburger Menu Logic ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenu.querySelector('i');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                // Swap icon between bars and X
+                if(navLinks.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
     </script>
 </body>
 </html>

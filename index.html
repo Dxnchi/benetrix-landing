@@ -1,369 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:title" content="Benetrix International | Logistics & Tech Solutions">
-    <meta property="og:description" content="Bridging the gap between cutting-edge technology, AI camera operations, and modern logistics.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1200&auto=format&fit=crop">
-    <meta property="og:url" content="https://dxnchi.github.io/benetrix-landing/">
-    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benetrix International | Logistics & Tech Solutions</title>
-    <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Benetrix International - Premium Digital Infrastructure, IT Procurement, and Custom Web Development.">
+    <title>Benetrix International | Premium Infrastructure</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Apple-Inspired Premium Theme: Black, White & Gold */
+        :root {
+            --bg-light: #ffffff;
+            --bg-gray: #f5f5f7; /* Apple standard gray */
+            --bg-dark: #000000;
+            --text-dark: #1d1d1f; /* Apple standard text */
+            --text-gray: #86868b;
+            --text-light: #f5f5f7;
+            --gold-primary: #d4af37;
+            --gold-light: #f9f1d8;
+            --gold-dark: #aa8529;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+            --glass-light: rgba(255, 255, 255, 0.85);
+            --glass-dark: rgba(0, 0, 0, 0.85);
+            --border-radius: 18px;
+            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Typography: Uses native Apple/System fonts */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light); 
+            color: var(--text-dark); 
+            line-height: 1.5; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+        
+        /* Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 8rem 0; }
+        
+        /* Scroll Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Navigation - Frosted Glass */
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: var(--glass-light); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; color: var(--text-dark); }
+        .logo i { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 3rem; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.9rem; color: var(--text-dark); transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--gold-dark); }
+
+        /* Buttons */
+        .btn { padding: 1rem 2rem; border-radius: 30px; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); letter-spacing: -0.2px; }
+        .btn-dark { background: var(--bg-dark); color: var(--bg-light); border: 1px solid var(--bg-dark); }
+        .btn-dark:hover { background: var(--gold-primary); border-color: var(--gold-primary); color: var(--bg-dark); transform: scale(1.02); }
+        .btn-gold { background: var(--gold-gradient); color: var(--bg-dark); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+        .btn-gold:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); }
+        
+        /* Hero Section */
+        #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 80px; }
+        .hero-content { max-width: 850px; }
+        .hero-badge { display: inline-block; padding: 0.5rem 1.2rem; background: var(--bg-gray); color: var(--text-dark); border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 2rem; letter-spacing: 0.5px; text-transform: uppercase; }
+        .hero-content h1 { font-size: clamp(3.5rem, 8vw, 5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; }
+        .text-gold { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 1.4rem; color: var(--text-gray); font-weight: 400; max-width: 650px; margin: 0 auto 3rem auto; letter-spacing: -0.3px; }
+        
+        /* Dynamic Tech Insights Bar */
+        .insights-bar { width: 100%; background: var(--bg-gray); padding: 1.5rem 0; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); overflow: hidden; position: relative; }
+        .insight-content { font-size: 1.1rem; font-weight: 500; color: var(--text-dark); text-align: center; display: flex; align-items: center; justify-content: center; gap: 15px; position: absolute; width: 100%; top: 50%; transform: translateY(-50%); opacity: 0; transition: opacity 0.8s ease; }
+        .insight-content.active { opacity: 1; }
+        .insight-content i { color: var(--gold-primary); font-size: 1.3rem; }
+
+        /* Services Grid */
+        .section-title { font-size: 3rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 1.5rem; text-align: center; }
+        .section-subtitle { font-size: 1.2rem; color: var(--text-gray); text-align: center; margin-bottom: 4rem; max-width: 600px; margin-inline: auto; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--bg-gray); padding: 3rem; border-radius: var(--border-radius); transition: var(--transition); text-align: left; }
+        .service-card:hover { transform: scale(1.02); background: var(--bg-light); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .service-icon { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 1.5rem; }
+        .service-card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+        .service-card p { color: var(--text-gray); margin-bottom: 2rem; }
+        .service-list li { margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+        .service-list i { color: var(--gold-dark); }
+
+        /* Enterprise Dark Section */
+        .enterprise-section { background: var(--bg-dark); color: var(--text-light); }
+        .enterprise-section .section-title, .enterprise-section .section-subtitle { color: var(--text-light); }
+        .compliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; }
+        .compliance-card { border-left: 2px solid var(--gold-primary); padding-left: 2rem; }
+        .compliance-card h3 { font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .compliance-list li { margin-bottom: 1.2rem; font-size: 1.05rem; color: #a1a1a6; display: flex; align-items: flex-start; gap: 15px; }
+        .compliance-list i { color: var(--gold-primary); margin-top: 4px; }
+
+        /* iOS Style Estimator */
+        .estimator-wrapper { background: var(--bg-gray); border-radius: 30px; padding: 4rem; margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        
+        .ios-toggle-group { display: flex; flex-direction: column; gap: 1.5rem; }
+        .ios-toggle-row { display: flex; justify-content: space-between; align-items: center; background: var(--bg-light); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .ios-toggle-text h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
+        .ios-toggle-text p { font-size: 0.85rem; color: var(--text-gray); }
+        
+        /* Custom iOS Switch */
+        .switch { position: relative; display: inline-block; width: 50px; height: 30px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #e5e5ea; transition: .4s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        input:checked + .slider { background-color: var(--gold-dark); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        .estimator-result { text-align: center; }
+        .estimator-result h4 { color: var(--text-gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .price-display { font-size: 4.5rem; font-weight: 700; letter-spacing: -2px; margin-bottom: 1rem; color: var(--text-dark); }
+        .price-display sup { font-size: 2rem; top: -1.5rem; }
+
+        /* Premium Chatbot */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
+        .chat-btn { width: 60px; height: 60px; border-radius: 50%; background: var(--bg-dark); color: var(--gold-primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: var(--transition); border: 2px solid var(--gold-primary); }
+        .chat-btn:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3); }
+        
+        .chat-window { position: absolute; bottom: 80px; right: 0; width: 360px; background: var(--bg-light); border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.08); display: none; flex-direction: column; overflow: hidden; transform-origin: bottom right; animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popIn { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
+        
+        .chat-header { background: var(--bg-dark); color: var(--bg-light); padding: 1.5rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--gold-primary); }
+        .chat-body { padding: 1.5rem; height: 300px; overflow-y: auto; background: var(--bg-gray); display: flex; flex-direction: column; gap: 12px; }
+        .msg { padding: 12px 16px; border-radius: 18px; font-size: 0.95rem; max-width: 85%; line-height: 1.4; }
+        .msg-bot { background: var(--bg-light); color: var(--text-dark); border-bottom-left-radius: 4px; align-self: flex-start; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .msg-user { background: var(--gold-light); color: var(--gold-dark); border-bottom-right-radius: 4px; align-self: flex-end; }
+        
+        .chat-options { padding: 1.2rem; background: var(--bg-light); display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .chat-option-btn { background: var(--bg-gray); padding: 12px; border-radius: 12px; font-size: 0.9rem; font-weight: 500; color: var(--text-dark); text-align: left; transition: background 0.2s; }
+        .chat-option-btn:hover { background: #e5e5ea; }
+        
+        /* Modals & Footer */
+        footer { background: var(--bg-light); padding: 4rem 0 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+        .footer-legal { margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; }
+        .footer-legal button { color: var(--text-gray); font-size: 0.9rem; font-weight: 500; }
+        .footer-legal button:hover { color: var(--text-dark); }
+        
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: var(--glass-dark); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .modal-content { background: var(--bg-light); margin: 5% auto; padding: 3rem; border-radius: 24px; width: 90%; max-width: 650px; max-height: 85vh; overflow-y: auto; position: relative; }
+        .modal-content h2 { font-size: 2rem; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+        .close-modal { position: absolute; right: 25px; top: 25px; font-size: 1.5rem; color: var(--text-gray); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .estimator-wrapper { grid-template-columns: 1fr; padding: 2rem; }
+            .chat-window { right: -15px; width: 340px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar (Now with Glassmorphism & Mobile Menu) -->
-    <nav class="navbar">
-        <a href="#" class="logo-container">
-            <img src="logo.png" alt="Benetrix Logo" class="brand-logo" onerror="this.style.display='none'"> 
-            <div class="logo-text">BENETRIX<span> INT.</span></div>
-        </a>
-        
-        <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#testimonials">Clients</a>
-        </div>
 
-        <!-- NEW: Hamburger Icon for Mobile -->
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <a href="#contact" class="btn-primary desktop-only">Get in Touch</a>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Vision Driven. <br><span class="highlight">Execution Focused.</span></h1>
-            <p>Bridging the gap between cutting-edge technology and modern logistics. We cater to any size fleet requirements, vehicle rentals, and enterprise tech solutions.</p>
-            <a href="#services" class="btn-secondary">Explore Our Services</a>
-        </div>
+    <!-- Apple-Style Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-cube"></i> BENETRIX
+            </div>
+            <div class="nav-links">
+                <a href="#services">Capabilities</a>
+                <a href="#enterprise">Enterprise Compliance</a>
+                <a href="#estimator">Investment</a>
+            </div>
+            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="btn btn-dark" style="padding: 0.6rem 1.2rem;">
+                Connect <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+            </a>
+        </nav>
     </header>
 
-    <section class="stats-section fade-in">
-        <div class="stat-box">
-            <h2 class="counter" data-target="99">0</h2><span>%</span>
-            <p>Uptime & Reliability</p>
-        </div>
-        <div class="stat-box">
-            <h2 class="counter" data-target="24">0</h2><span>/7</span>
-            <p>Fleet Tracking Visibility</p>
-        </div>
-        <div class="stat-box">
-            <h2 class="counter" data-target="100">0</h2><span>+</span>
-            <p>Custom Deployments</p>
+    <!-- Stark, Clean Hero Section -->
+    <section id="hero" class="reveal">
+        <div class="container hero-content">
+            <div class="hero-badge">Fully CSD Registered & Verified</div>
+            <h1>Engineering <br><span class="text-gold">Absolute Precision.</span></h1>
+            <p class="hero-subtitle">From custom web architectures to tier-one corporate hardware distribution, we build the systems you can trust your business with.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#estimator" class="btn btn-dark">Estimate Project</a>
+                <a href="#services" class="btn" style="background: var(--bg-gray); color: var(--text-dark);">Explore Services</a>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="services fade-in">
-        <h2>What We Do</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-truck-fast"></i>
-                <h3>Fleet & Logistics</h3>
-                <p>Professional logistics branding and management. We cater to any size fleet requirements, ensuring your operations move seamlessly.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-car"></i>
-                <h3>Vehicle Rentals</h3>
-                <p>Reliable and cost-effective vehicle rental solutions tailored for personal mobility and commercial ride-hailing deployment.</p>
-            </div>
+    <!-- Dynamic Tech Insights Bar -->
+    <div class="insights-bar reveal" style="height: 80px;">
+        <div class="insight-content active" id="insight-1">
+            <i class="fas fa-chart-line"></i> 
+            <span><strong>ROI Insight:</strong> Custom API integrations reduce operational drag by up to 40%, automating data flow between your legacy systems.</span>
+        </div>
+        <div class="insight-content" id="insight-2">
+            <i class="fas fa-laptop-medical"></i> 
+            <span><strong>Hardware Fact:</strong> Refreshing enterprise laptop fleets every 3 years decreases IT downtime by 25%. We distribute tier-one tech directly.</span>
+        </div>
+        <div class="insight-content" id="insight-3">
+            <i class="fas fa-mobile-alt"></i> 
+            <span><strong>Conversion Fact:</strong> Mobile-optimized web applications increase user retention and sales conversions by over 30%.</span>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <section id="services" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Capabilities.</h2>
+            <p class="section-subtitle">Bridging the gap between agile web development and enterprise-grade physical logistics.</p>
             
-            <div class="service-card">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>Tech Reselling & Dev</h3>
-                <p>Premium technology reselling and custom software development, including mobile-optimized tracking and invoicing systems.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section fade-in">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>Our Story & Leadership</h2>
-                <h3>Driven by Vision. Built on Architecture.</h3>
-                <p>Benetrix International was founded by Destiny Ifesinachi Okeke on a simple premise: modern logistics and commercial operations should be powered by seamless automation and data-driven infrastructure.</p>
-                <p>As an Information Technology specialist specializing in Business Information Technology at the University of Johannesburg, the leadership bridges raw operational execution with commercial grade software engineering.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Digital Platforms</h3>
+                    <p>Clean, high-performance web applications and e-commerce storefronts designed to convert traffic and scale effortlessly.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Responsive UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> Payment Gateway Integrations</li>
+                    </ul>
+                </div>
                 
-                <div class="contributions-box">
-                    <h4>Key Engineering & Operational Milestones:</h4>
-                    <ul>
-                        <li>
-                            <div>
-                                <i class="fa-solid fa-square-check"></i> <strong>Enterprise Integration:</strong> Executing a 12-month intensive Systems Integration role at JumpCo, deploying enterprise API pipelines and corporate-grade workflows.
-                                <div style="margin-top: 5px; margin-left: 28px;">
-                                    <span class="tech-badge">Node.js</span>
-                                    <span class="tech-badge">REST APIs</span>
-                                    <span class="tech-badge">Enterprise Cloud</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="fa-solid fa-square-check"></i> <strong>Proprietary Logistics Systems:</strong> Architected and deployed a mobile-optimized tracking and fleet operational management app to handle internal assets.
-                                <div style="margin-top: 5px; margin-left: 28px;">
-                                    <span class="tech-badge">Mobile Fleet UI</span>
-                                    <span class="tech-badge">Asset Routing</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="fa-solid fa-square-check"></i> <strong>Commercial Web Infrastructure:</strong> Shipped live full-stack production systems, custom database-driven invoicing frameworks, and secure authentication platforms (including corporate portals and retail solutions).
-                                <div style="margin-top: 5px; margin-left: 28px;">
-                                    <span class="tech-badge">Secure Databases</span>
-                                    <span class="tech-badge">Automated Invoicing</span>
-                                </div>
-                            </div>
-                        </li>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>API Middleware</h3>
+                    <p>Fault-tolerant backend architectures engineered to pass strict enterprise data integrity requirements.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Legacy Database Modernization</li>
+                        <li><i class="fas fa-check"></i> Secure Microservices</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>IT Procurement</h3>
+                    <p>Fulfilling government and corporate RFQs for bulk hardware through direct wholesale ICT distributors.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Workstations & Networking</li>
+                        <li><i class="fas fa-check"></i> Dedicated Fleet Logistics</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials fade-in">
-        <h2>Client Success Stories</h2>
-        <p class="section-subtitle">Trusted by local businesses and enterprise partners.</p>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+    <!-- Dark Enterprise/Compliance Section -->
+    <section id="enterprise" class="enterprise-section reveal">
+        <div class="container">
+            <h2 class="section-title">Enterprise Authority.</h2>
+            <p class="section-subtitle" style="color: #a1a1a6;">Fully compliant, legally structured, and risk-free for public sector and corporate Supply Chain Management.</p>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h3>Statutory Compliance</h3>
+                    <ul class="compliance-list">
+                        <li><i class="fas fa-shield-alt"></i> <span><strong>National Treasury CSD:</strong> Verified and registered supplier.</span></li>
+                        <li><i class="fas fa-shield-alt"></i> <span><strong>SARS Tax Status:</strong> Active Tax Compliance PIN.</span></li>
+                        <li><i class="fas fa-shield-alt"></i> <span><strong>B-BBEE Level 1:</strong> 135% procurement recognition (EME).</span></li>
+                        <li><i class="fas fa-shield-alt"></i> <span><strong>CIPC:</strong> Registered Private Company (Pty) Ltd.</span></li>
+                    </ul>
                 </div>
-                <p class="quote">"Benetrix completely transformed our retail operations. The custom commercial website and secure invoicing backend they deployed for us is flawless and incredibly fast."</p>
-                <div class="client-info">
-                    <strong>IFENRI Market</strong>
-                    <span>Retail & Grocery, Buccleuch</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p class="quote">"Exceptional logistics management. Their mobile-optimized tracking system gives us complete visibility over our assets. Vision-driven and execution-focused, exactly as promised."</p>
-                <div class="client-info">
-                    <strong>Commercial Fleet Partner</strong>
-                    <span>Johannesburg</span>
+                
+                <div class="compliance-card">
+                    <h3>Distribution Pipeline</h3>
+                    <ul class="compliance-list">
+                        <li><i class="fas fa-box"></i> <span>Direct sourcing from South Africa’s top ICT wholesalers.</span></li>
+                        <li><i class="fas fa-box"></i> <span>Original manufacturer warranties on all hardware.</span></li>
+                        <li><i class="fas fa-box"></i> <span>In-house commercial vehicle fleet for secure, direct-to-site asset delivery without third-party risk.</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact fade-in">
-        <h2>Ready to Scale Your Operations?</h2>
-        <p>Let's build the infrastructure your business needs.</p>
-        
-        <div class="contact-grid">
-            <div class="contact-info">
-                <a href="tel:+27744993979" class="contact-link">
-                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-                    <div>
-                        <span class="link-label">Call Us Directly</span>
-                        <strong>+27 74 499 3979</strong>
+    <!-- iOS Style Estimator -->
+    <section id="estimator" class="reveal">
+        <div class="container">
+            <h2 class="section-title">Investment Calculator.</h2>
+            <p class="section-subtitle">Select your requirements for an immediate baseline estimate.</p>
+            
+            <div class="estimator-wrapper">
+                <div class="ios-toggle-group">
+                    <div class="ios-toggle-row">
+                        <div class="ios-toggle-text">
+                            <h4>Custom Web Platform</h4>
+                            <p>Full-stack development, DB setup, UI/UX.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="calc-cb" value="15000">
+                            <span class="slider"></span>
+                        </label>
                     </div>
-                </a>
-                
-                <a href="mailto:destife10@gmail.com" class="contact-link">
-                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                    <div>
-                        <span class="link-label">Email Us</span>
-                        <strong>destife10@gmail.com</strong>
+                    
+                    <div class="ios-toggle-row">
+                        <div class="ios-toggle-text">
+                            <h4>API & Middleware</h4>
+                            <p>Secure routing and legacy system integration.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="calc-cb" value="8500">
+                            <span class="slider"></span>
+                        </label>
                     </div>
-                </a>
 
-                <a href="https://www.linkedin.com/in/destiny-okeke123/" target="_blank" class="contact-link">
-                    <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
-                    <div>
-                        <span class="link-label">Connect with the Founder</span>
-                        <strong>Destiny Okeke on LinkedIn</strong>
+                    <div class="ios-toggle-row">
+                        <div class="ios-toggle-text">
+                            <h4>Hardware Procurement</h4>
+                            <p>Wholesale RFQ fulfillment (Base per 10 units).</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="calc-cb" value="120000">
+                            <span class="slider"></span>
+                        </label>
                     </div>
-                </a>
-                
-                <a href="https://maps.google.com/?q=Buccleuch,+Sandton,+Johannesburg" target="_blank" class="contact-link">
-                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                    <div>
-                        <span class="link-label">Headquarters</span>
-                        <strong>Buccleuch, Sandton, JHB</strong>
-                    </div>
-                </a>
-            </div>
+                </div>
 
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28669.57140801869!2d28.08272995!3d-26.0713783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9572b83eb05bd5%3A0xc3c9a622a6111f12!2sBuccleuch%2C%20Sandton!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="estimator-result">
+                    <h4>Estimated Baseline</h4>
+                    <div class="price-display"><sup>R</sup><span id="priceValue">0</span></div>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 2rem;">*Estimates are indicative. Final quotes depend on scope and hardware exchange rates.</p>
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi%20Benetrix,%20I'd%20like%20to%20discuss%20an%20infrastructure%20project." target="_blank" class="btn btn-gold" style="width: 100%; justify-content: center;">
+                        Finalize Quote via WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>BENETRIX <span>INT.</span></h3>
-                <p>Bridging technology and logistics.</p>
-            </div>
-            <div class="footer-legal">
-                <p><strong>Benetrix International (Pty) Ltd</strong></p>
-                <p>Company Reg: 2025/966705/07</p>
-                <p>B-BBEE Level 1 Contributor</p> 
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Benetrix International. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/27744993979?text=Hi%20Destiny,%20I'd%20like%20to%20know%20more%20about%20Benetrix%20logistics%20and%20tech%20services." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <div class="chat-widget" id="chatWidget">
-        <button class="chat-toggle" onclick="toggleChat()">
-            <i class="fa-solid fa-comments"></i>
+    <!-- Floating Concierge Chatbot -->
+    <div class="chat-widget">
+        <button class="chat-btn" id="toggleChat">
+            <i class="fas fa-comment-dots"></i>
         </button>
-
+        
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <div class="chat-header-info">
-                    <div class="online-indicator"></div>
-                    <strong>Benetrix Assistant</strong>
-                </div>
-                <button class="chat-close" onclick="toggleChat()">×</button>
+                <div><i class="fas fa-cube" style="color: var(--gold-primary); margin-right: 8px;"></i> Benetrix Concierge</div>
+                <button id="closeChat" style="color: var(--bg-light);"><i class="fas fa-times"></i></button>
             </div>
             
             <div class="chat-body" id="chatBody">
-                <div class="chat-msg bot">
-                    Hi! Welcome to Benetrix International. How can we optimize your operations today?
-                </div>
+                <div class="msg msg-bot">Welcome to Benetrix International. I am your digital concierge. How can we elevate your infrastructure today?</div>
             </div>
-
-            <div class="chat-footer">
-                <div class="chat-options">
-                    <button onclick="handleChatOption('logistics')">Logistics & Fleet</button>
-                    <button onclick="handleChatOption('rentals')">Vehicle Rentals</button>
-                    <button onclick="handleChatOption('tech')">Tech Solutions</button>
-                </div>
+            
+            <div class="chat-options" id="chatOptions">
+                <button class="chat-option-btn" onclick="handleChat('web')">I need a web platform built.</button>
+                <button class="chat-option-btn" onclick="handleChat('rfq')">I have a corporate/government RFQ.</button>
+                <button class="chat-option-btn" onclick="handleChat('human')">Connect me to the executive desk.</button>
             </div>
         </div>
     </div>
 
-   <!-- Scripts: Chatbot, Fade-In, Number Counter, and Mobile Menu -->
+    <!-- Modals & Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <i class="fas fa-cube"></i> BENETRIX
+            </div>
+            <p style="color: var(--text-gray); font-size: 0.9rem;">&copy; 2026 Benetrix International (Pty) Ltd. Engineered for Scale.</p>
+            <div class="footer-legal">
+                <button onclick="openModal('privacyModal')">Privacy & POPIA</button>
+                <button onclick="openModal('termsModal')">Terms of Service</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPIA Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('privacyModal')">&times;</button>
+            <h2>Privacy & POPIA</h2>
+            <p style="color: var(--text-gray);"><br>Benetrix International strictly adheres to the Protection of Personal Information Act (POPIA).</p>
+            <p style="color: var(--text-gray);"><br><strong>1. Data Collection:</strong> We collect only essential corporate data required for B2B contracting, RFQ fulfillment, and logistics.</p>
+            <p style="color: var(--text-gray);"><strong>2. Security:</strong> All client system data, API keys, and procurement records are secured using enterprise-grade encryption. We do not sell data to third parties.</p>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('termsModal')">&times;</button>
+            <h2>Terms of Service</h2>
+            <p style="color: var(--text-gray);"><br><strong>1. Hardware Quotations:</strong> Due to volatile exchange rates, formal IT hardware quotes are valid for a maximum of 7 days unless explicitly stated otherwise.</p>
+            <p style="color: var(--text-gray);"><strong>2. Software IP:</strong> Custom API and web application source code remains the intellectual property of Benetrix until all invoices are settled in full.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        // --- 1. Chatbot Logic ---
-        function toggleChat() {
-            const chatWindow = document.getElementById('chatWindow');
-            chatWindow.classList.toggle('active');
-        }
-
-        function handleChatOption(option) {
-            const chatBody = document.getElementById('chatBody');
-            let userText = "";
-            let botText = "";
-            let actionLink = "";
-
-            if (option === 'logistics') {
-                userText = "I'm interested in Fleet & Logistics solutions.";
-                botText = "Excellent. We design custom automated tracking systems and lean fleet coordination models. Let's finalize your spec on WhatsApp right now:";
-                actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I'm%20inquiring%20about%20your%20logistics%20and%20fleet%20services.";
-            } else if (option === 'rentals') {
-                userText = "I want to inquire about Vehicle Rentals.";
-                botText = "Perfect. We offer highly cost-effective options for personal mobility and ride-hailing deployments. Tap below to chat with our fleet manager:";
-                actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I'd%20like%20to%20know%20more%20about%20your%20vehicle%20rental%20options.";
-            } else if (option === 'tech') {
-                userText = "I need Tech Reselling or Custom Software Dev.";
-                botText = "Brilliant choice. From database infrastructures to custom invoicing architectures, we build scalable systems. Connect with our engineering core:";
-                actionLink = "https://wa.me/27744993979?text=Hi%20Destiny,%20I%20want%20to%20discuss%20a%20custom%20software%20project.";
-            }
-
-            chatBody.innerHTML += `<div class="chat-msg user">${userText}</div>`;
-            chatBody.scrollTop = chatBody.scrollHeight;
-
-            setTimeout(() => {
-                chatBody.innerHTML += `
-                    <div class="chat-msg bot">
-                        ${botText}
-                        <a href="${actionLink}" target="_blank" class="chat-action-btn"><i class="fa-brands fa-whatsapp"></i> Launch Live Secure Chat</a>
-                    </div>
-                `;
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }, 600);
-        }
-
-        // --- 2. Fade-In Scroll Observer ---
-        const observer = new IntersectionObserver((entries) => {
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => revealObserver.observe(el));
 
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        // Tech Insights Rotator
+        const insights = document.querySelectorAll('.insight-content');
+        let currentInsight = 0;
+        setInterval(() => {
+            insights[currentInsight].classList.remove('active');
+            currentInsight = (currentInsight + 1) % insights.length;
+            insights[currentInsight].classList.add('active');
+        }, 5000);
 
-        // --- 3. Dynamic Number Counter Observer ---
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-
-        const startCounting = (counter) => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
-
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(() => startCounting(counter), 15);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    startCounting(entry.target.querySelector('.counter'));
-                    statObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-box').forEach(box => statObserver.observe(box));
-
-        // --- 4. Mobile Hamburger Menu Logic ---
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        const menuIcon = mobileMenu.querySelector('i');
-
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+        // iOS Estimator
+        const checkboxes = document.querySelectorAll('.calc-cb');
+        const priceDisplay = document.getElementById('priceValue');
+        
+        function updatePrice() {
+            let total = 0;
+            checkboxes.forEach(cb => { if(cb.checked) total += parseInt(cb.value); });
+            
+            // Number counter animation
+            let start = parseInt(priceDisplay.innerText.replace(/,/g, '')) || 0;
+            let duration = 600;
+            let startTime = null;
+            
+            function animatePrice(currentTime) {
+                if (!startTime) startTime = currentTime;
+                let progress = currentTime - startTime;
+                let currentVal = Math.floor(start + (total - start) * (progress / duration));
                 
-                // Swap icon between bars and X
-                if(navLinks.classList.contains('active')) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
+                if (progress < duration) {
+                    priceDisplay.innerText = currentVal.toLocaleString();
+                    requestAnimationFrame(animatePrice);
                 } else {
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
+                    priceDisplay.innerText = total.toLocaleString();
                 }
-            });
+            }
+            requestAnimationFrame(animatePrice);
+        }
+        checkboxes.forEach(cb => cb.addEventListener('change', updatePrice));
+
+        // Concierge Chatbot
+        const chatWindow = document.getElementById('chatWindow');
+        const chatBody = document.getElementById('chatBody');
+        const chatOptions = document.getElementById('chatOptions');
+        const waNumber = "0744993979"; // <--- UPDATE THIS NUMBER (e.g. 27612345678)
+
+        document.getElementById('toggleChat').addEventListener('click', () => {
+            chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+        document.getElementById('closeChat').addEventListener('click', () => chatWindow.style.display = 'none');
+
+        function handleChat(type) {
+            chatOptions.style.display = 'none';
+            let userText = "", botReply = "", waMsg = "";
+
+            if(type === 'web') {
+                userText = "I need a web platform built.";
+                botReply = "Excellent choice. We build high-conversion, mobile-optimized sites. Let's move to WhatsApp to discuss your vision.";
+                waMsg = "Hi Benetrix, I am looking to develop a custom web platform.";
+            } else if(type === 'rfq') {
+                userText = "I have a corporate/government RFQ.";
+                botReply = "Understood. We are fully CSD and SARS compliant. Connecting you directly to our procurement desk.";
+                waMsg = "Hi Benetrix, I would like to request a quote / submit an RFQ for hardware.";
+            } else {
+                userText = "Connect me to the executive desk.";
+                botReply = "Right away. Click below to chat directly with Destiny.";
+                waMsg = "Hi Destiny, I would like to discuss an enterprise project.";
+            }
+
+            // Append User Msg
+            chatBody.innerHTML += `<div class="msg msg-user">${userText}</div>`;
+            chatBody.scrollTop = chatBody.scrollHeight;
+            
+            // Append Bot Msg & WhatsApp Link
+            setTimeout(() => {
+                chatBody.innerHTML += `<div class="msg msg-bot">${botReply}</div>`;
+                setTimeout(() => {
+                    chatBody.innerHTML += `<a href="https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}" target="_blank" class="btn btn-gold" style="padding: 10px; font-size: 0.9rem; justify-content: center; margin-top: 10px; color: #000;"><i class="fab fa-whatsapp"></i> Continue to WhatsApp</a>`;
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 600);
+            }, 800);
         }
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                if (menuIcon) {
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
-                }
-            });
-        });
+        // Modals
+        function openModal(id) { document.getElementById(id).style.display = 'block'; document.body.style.overflow = 'hidden'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
+        window.onclick = function(e) { if (e.target.classList.contains('modal')) closeModal(e.target.id); }
     </script>
 </body>
 </html>
